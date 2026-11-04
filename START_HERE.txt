@@ -1,0 +1,39 @@
+MACHICHI STORE — QUICK START (Windows)
+====================================
+
+1. Extract this ZIP. Open the machichi-store folder in VS Code.
+2. In Terminal: npm install
+3. Copy .env.example to a new file named .env.local
+4. In Supabase project jqiqviedzchrofixvvbb find your public (publishable/anon) key.
+   Put it in .env.local after NEXT_PUBLIC_SUPABASE_ANON_KEY=
+   Do not share or commit .env.local. NEVER use service_role/secret keys.
+5. Supabase > SQL Editor: run supabase/setup.sql ONCE on the SAME project.
+6. Supabase > Authentication > Users: create a user (if not created).
+   SQL Editor: insert into public.admins(user_id) select id from auth.users
+   where email = 'YOUR_ADMIN_EMAIL' on conflict do nothing;
+7. Terminal: npm run dev
+8. Store: http://localhost:3000
+   Admin: http://localhost:3000/admin
+9. Add a product with pictures and actual stock in Admin. Check store, size & photo swipe,
+   then open WhatsApp order and SEND the message to confirm.
+
+PUBLISH (GitHub + Netlify)
+=========================
+1. Verify .env.local is NOT committed. GitHub Desktop > Publish repository or Push origin.
+2. Netlify > Add new project > Import from Git > select repository.
+3. Set environment variables under Site configuration > Environment variables:
+   NEXT_PUBLIC_SUPABASE_URL = https://jqiqviedzchrofixvvbb.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY = your PUBLIC key
+4. Build command: npm run build (from netlify.toml).
+5. Deploy and visit /admin. Test products and WhatsApp orders on live URL.
+
+NOTES
+=====
+- You must complete Supabase setup and provide your own public key for live features.
+- Sample products have no genuine stock; set real stock before selling.
+- Swipe left/right works on product image gallery on touch devices.
+- The build and full production flow have not been verified in this delivery.
+
+ORDER FORM UPDATE: Customer enters full name only. Product details go to WhatsApp. Complete delivery details in chat. WhatsApp does not automatically supply the sender phone number to the website.
+
+الطلب عبر واتساب: من صفحة المنتج اختار اللون والقياس ثم اضغط «طلب دابا عبر واتساب». ما كاين حتى فورم، والتوصيل كيتكمل فالمحادثة.
