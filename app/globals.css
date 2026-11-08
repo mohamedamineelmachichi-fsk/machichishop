@@ -16,7 +16,7 @@
 .image-order button:disabled{opacity:.3;cursor:default}
 .cover-label{position:absolute;bottom:5px;right:5px;background:#111;color:#fff;padding:3px 6px;font-size:10px}
 
-/* Product gallery improvements only: preserve original storefront design */ — portrait iPhone photography, discreet controls */
+/* MACHICHI gallery refresh — portrait iPhone photography, discreet controls */
 .main-photo{height:min(77vh,730px);min-height:430px;background:#faf9f7;border-radius:13px;overflow:hidden;isolation:isolate}
 .photo-viewport{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
 .photo-viewport>.gallery-photo,.zoomed-photo>img{width:100%;height:100%;object-fit:contain;object-position:center}
