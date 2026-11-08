@@ -15,3 +15,20 @@
 .image-order button{background:#fff;border:1px solid #ddd;border-radius:3px;color:#111;padding:3px 9px;cursor:pointer}
 .image-order button:disabled{opacity:.3;cursor:default}
 .cover-label{position:absolute;bottom:5px;right:5px;background:#111;color:#fff;padding:3px 6px;font-size:10px}
+
+/* Product gallery improvements only: preserve original storefront design */ — portrait iPhone photography, discreet controls */
+.main-photo{height:min(77vh,730px);min-height:430px;background:#faf9f7;border-radius:13px;overflow:hidden;isolation:isolate}
+.photo-viewport{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.photo-viewport>.gallery-photo,.zoomed-photo>img{width:100%;height:100%;object-fit:contain;object-position:center}
+.zoomed-photo{position:absolute;inset:0;display:grid;place-items:center;background:#faf9f7;transform-origin:50% 50%;transition:transform .2s ease;pointer-events:none}
+.main-photo>button.gallery-prev,.main-photo>button.gallery-next{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:#15151580;color:#fff;backdrop-filter:blur(9px);display:grid;place-items:center;opacity:.44;transition:opacity .2s,background .2s,transform .2s;z-index:2}
+.main-photo>button.gallery-prev:hover,.main-photo>button.gallery-next:hover{opacity:1;background:#151515cf;transform:translateY(-50%) scale(1.08)}
+.gallery-prev{left:11px}.gallery-next{right:11px}
+.zoom-controls{position:absolute;bottom:12px;right:12px;display:flex;gap:3px;align-items:center;padding:4px;background:#161616b0;color:white;border-radius:30px;z-index:3;backdrop-filter:blur(10px)}
+.zoom-controls button{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;color:white}.zoom-controls button:hover{background:#ffffff35}.zoom-controls button:disabled{opacity:.25}.zoom-controls span{font-size:10px;min-width:38px;text-align:center;direction:ltr}
+.gallery-counter{bottom:15px;left:14px;transform:none;background:#1515159c;font-size:10px;padding:6px 10px}
+.thumbs{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding:6px 1px 9px;scrollbar-width:thin}
+.thumbs button{flex:0 0 61px;width:61px;height:78px;padding:2px;border-radius:7px;overflow:hidden;scroll-snap-align:center;transition:transform .18s,border-color .18s}
+.thumbs button:hover{transform:translateY(-2px)}.thumbs button.selected{border-color:#1c1c1c}.thumbs img{object-fit:cover;border-radius:4px}
+@media(max-width:650px){.main-photo{height:min(67vh,590px);min-height:360px;max-height:none;border-radius:9px}.main-photo>button.gallery-prev,.main-photo>button.gallery-next{width:32px!important;height:32px!important;opacity:.6}.thumbs{padding:7px 4px}.thumbs button{flex-basis:56px;width:56px;height:70px}.zoom-controls{right:8px;bottom:9px}}
+@media(prefers-reduced-motion:reduce){.main-photo button,.zoomed-photo,.thumbs button{transition:none!important}}
